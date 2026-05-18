@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Svit Canteen</title>
+    <style>
+        /* Applied the background image directly to the body so it covers everything seamlessly */
+        body {
+            font-family: fantasy, sans-serif;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('canteen.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-section {
+            padding-left: 100px;
+        }
+
+        /* header style */
+        .header {
+            background-color: #caaa2b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-top: 30px;
+        }
+
+        /* Shop Grid Layout for Welcome Dashboard */
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* Welcome Page Interactive Shop Cards */
+        .shop-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .shop-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .shop-card h3 {
+            margin-top: 0;
+            color: #caaa2b;
+            font-size: 22px;
+        }
+
+        /* Menu Display Cards */
+        .Menu-card {
+            background-color: white;
+            margin: 30px auto;
+            padding: 25px;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Fixed structural typo to properly display custom action buttons */
+        .btn {
+            background-color: #B8860B;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .btn:hover {
+            background-color: darkblue;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .Menu-card {
+            scroll-margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>SVIT CANTEEN</h1>
+        <p>Choose Your Favorite Food</p>
+    </div>
+
+    <div class="shop-grid">
+        <a href="#coffee-magic-shop" class="shop-card">
+            <h3>☕ COFFEE & MASALA</h3>
+            <p>Enjoy hot brews, cold drinks, and spicy maggie items.</p>
+            <span class="btn" style="display:inline-block; margin-top:10px;">Open Menu</span>
+        </a>
+
+        <a href="#mac-corner-shop" class="shop-card">
+            <h3>🍔 MAC CORNER</h3>
+            <p>Crispy puffs, cheesy garlic bread, pizzas, and drinks.</p>
+            <span class="btn" style="display:inline-block; margin-top:10px;">Open Menu</span>
+        </a>
+
+        <a href="#chinese-chat-shop" class="shop-card">
+            <h3>🥢 CHINESE & CHAT</h3>
+            <p>Spicy manchurian, noodles, panipuri, and dahi chatako.</p>
+            <span class="btn" style="display:inline-block; margin-top:10px;">Open Menu</span>
+        </a>
+    </div>
+
+    <div class="shop-container">
+
+        <div id="coffee-magic-shop" class="Menu-card">
+            <h2 style="text-align:center; color:#caaa2b;">COFFEE & MASALA MAGIC</h2> 
+            
+            <h3>COFFEE DRINKS</h3>  
+            <p>cold coffee -------------------------₹60</p>
+            <p>hot coffee  -------------------------₹55</p>
+            <p>Hot chocolate milk -----------------₹55</p>
+      
+            <h3>MASALA MAGIC</h3>
+            <p>Maggie -----------------------------₹45</p>
+            <p>Cheese Maggie ----------------------₹60</p>
+            <p>Pasta ------------------------------₹50</p>
+            <p>White Sauce Pasta ------------------₹60</p>
+
+            <div style="margin-top:20px;">
+                <button class="btn">view details</button>
+                <button class="btn">order now</button>
+            </div>
+        </div>     
+        
+        <div id="mac-corner-shop" class="Menu-card"> 
+            <h2 style="text-align:center; color:#caaa2b;">MAC CORNER</h2>
+            
+            <h3>PUFFS & MAIN</h3>
+            <p>Veg puff---------------------------₹18</p>
+            <p>Cheese puff-------------------------₹25</p>
+            <p>Mayo puff---------------------------₹30</p>
+            <p>Chinese puff-------------------------₹30</p>
+            <p>Garlic Bread-------------------------₹50</p>
+            <p>Sandwich---------------------------₹60</p>
+            <p>Pizza-------------------------------₹120</p>
+            <p>French fries-------------------------₹80</p>
+
+            <h3>COLD DRINKS</h3>
+            <p>Lemon soda--------------------------₹30</p>
+            <p>Mojito------------------------------₹50</p>
+         
+            <div style="margin-top:20px;">
+                <button class="btn">view details</button>
+                <button class="btn">order now</button>
+            </div>
+        </div>
+
+        <div id="chinese-chat-shop" class="Menu-card">
+            <h2 style="text-align:center; color:#caaa2b;">CHINESE & CHAT</h2>
+            
+            <h3>CHINESE</h3>
+            <p>Manchurian---------------------------₹70</p>
+            <p>Schezwan noodles-----------------------₹80</p>
+            <p>Hakka noodles-------------------------₹80</p>
+            <p>Chinese bhel--------------------------₹60</p>
+            <p>Dry manchurian-----------------------₹80</p>
+
+            <h3>CHAT ITEMS</h3>
+            <p>Dahi Chatako----------------------------₹40</p>
+            <p>Dahi Puri-------------------------------₹40</p>
+            <p>Pani puri-------------------------------₹30</p>
+            <p>Chat papadi----------------------------₹40</p>
+
+            <div style="margin-top:20px;">
+                <button class="btn">view details</button>
+                <button class="btn">order now</button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
