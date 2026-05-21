@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coffee Menu</title>
+    <style>
+        body {
+            font-family: fantasy, sans-serif;
+            background-image: linear-gradient(rgba(0,0,0,0.4), 
+            rgba(0,0,0,0.4)), url('canteen.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0; padding: 0;
+        }
+        .Menu-card {
+            background-color: white;
+            margin: 40px auto;
+            padding: 25px;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+        }
+        p {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dotted gray;
+            padding: 5px 0;
+        }
+        .back-btn {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+            background-color: #B8860B;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            width: fit-content;
+            font-family: fantasy;
+        }
+        .back-btn:hover { background-color: darkblue; }
+
+        .btn {
+            background-color: #B8860B;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .btn:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="canteen.html" class="back-btn">← Back to Home</a>
+
+    <div class="Menu-card">
+        <h2 style="text-align:center; color:#caaa2b;">COFFEE & MASALA MAGIC</h2>
+         <h3>COFFEE DRINKS</h3>  
+            <p>cold coffee <span>₹60<span></p>
+            <p>hot coffee  <span>₹55<span></p>
+            <p>Hot chocolate milk <span>₹55 </span></p>
+      
+            <h3>MASALA MAGIC</h3>
+            <p>Maggie<span>₹45<span></p>
+            <p>Cheese Maggie <span>₹60<span></p>
+            <p>Pasta <span>₹50</span></p>
+            <p>White Sauce Pasta <span>₹60</span></p>
+
+            <div style="margin-top:20px;">
+                <button class="btn">view details</button>
+                <button class="btn">order now</button>
+            </div>
+
+
+    </div>
+
+</body>
+</html>
