@@ -3,10 +3,9 @@
 <head>
     <title>Svit Canteen</title>
     <style>
-        /* Applied the background image directly to the body so it covers everything seamlessly */
         body {
             font-family: fantasy, sans-serif;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('canteen.jpeg');
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('canteen.jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -14,36 +13,23 @@
             margin: 0;
             padding: 0;
         }
-        p
-        {
-            display:flex;
-            justify-content:space-between;
-            border-bottom:1px dotted gray;
-            padding:5px 0;
+
+        p {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dotted gray;
+            padding: 5px 0;
         }
 
-        .menu-section {
-            padding-left: 100px;
-        }
-
-        /* header style */
         .header {
             font-family: 'Montserrat', sans-serif;
             background-color: #caaa2b;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 15px 20px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
-        .section-title {
-            text-align: center;
-            color: #333;
-            font-size: 24px;
-            margin-top: 30px;
-        }
-
-        /* Shop Grid Layout for Welcome Dashboard */
         .shop-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -53,7 +39,6 @@
             padding: 0 20px;
         }
 
-        /* Welcome Page Interactive Shop Cards */
         .shop-card {
             background-color: white;
             padding: 25px;
@@ -76,17 +61,6 @@
             font-size: 22px;
         }
 
-        /* Menu Display Cards */
-        .Menu-card {
-            background-color: white;
-            margin: 30px auto;
-            padding: 25px;
-            max-width: 500px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
-        }
-
-        /* Fixed structural typo to properly display custom action buttons */
         .btn {
             background-color: #B8860B;
             color: white;
@@ -95,84 +69,264 @@
             border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
-            margin-right: 5px;
         }
 
-        .btn:hover {
-            background-color: darkblue;
+        .btn:hover { background-color: darkblue; }
+
+        html { scroll-behavior: smooth; }
+
+        /* ── HAMBURGER BUTTON ── */
+        .hamburger-btn {
+            position: fixed;
+            top: 16px;
+            left: 16px;
+            z-index: 2000;
+            background: #1a1a1a;
+            border: 1px solid #444;
+            padding: 10px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .hamburger-btn span {
+            display: block;
+            height: 2.5px;
+            border-radius: 2px;
+            background: #c9a227;
+        }
+        .hamburger-btn span:nth-child(1) { width: 22px; }
+        .hamburger-btn span:nth-child(2) { width: 16px; }
+        .hamburger-btn span:nth-child(3) { width: 10px; }
+
+        /* ── LEFT SLIDE DRAWER ── */
+        .left-drawer {
+            position: fixed;
+            top: 0;
+            left: -320px;
+            width: 300px;
+            height: 100%;
+            background: #1a1a1a;
+            z-index: 1500;
+            transition: left 0.35s ease;
+            border-right: 2px solid #c9a227;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
         }
 
-        html {
-            scroll-behavior: smooth;
+        .left-drawer.open {
+            left: 0;
         }
 
-        .Menu-card {
-            scroll-margin-top: 30px;
+        .drawer-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            padding: 0;
         }
+
+        /* close button inside drawer */
+        .drawer-close {
+            background: none;
+            border: none;
+            color: #c9a227;
+            font-size: 22px;
+            cursor: pointer;
+            align-self: flex-end;
+            padding: 16px 20px 0;
+        }
+
+        .drawer-brand {
+            padding: 10px 24px 24px;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .three-lines {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-bottom: 14px;
+        }
+        .three-lines span {
+            display: block;
+            height: 2.5px;
+            border-radius: 2px;
+            background: #c9a227;
+        }
+        .three-lines span:nth-child(1) { width: 32px; }
+        .three-lines span:nth-child(2) { width: 22px; }
+        .three-lines span:nth-child(3) { width: 14px; }
+
+        .brand-name {
+            font-size: 17px;
+            font-weight: 700;
+            color: #c9a227;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .brand-tagline { font-size: 11px; color: #888; margin-top: 4px; }
+        .brand-since   { font-size: 11px; color: #555; margin-top: 6px;
+                         border: none; display: block;
+                         justify-content: unset; padding: 0; }
+
+        .drawer-section {
+            padding: 20px 24px;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .drawer-section-title {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 14px;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 13px;
+            color: #bbb;
+            line-height: 1.6;
+            border: none;
+            justify-content: unset;
+            padding: 0;
+        }
+
+        .drawer-section a {
+            display: block;
+            font-size: 13px;
+            color: #bbb;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.2s;
+            border: none;
+            padding: 0;
+        }
+        .drawer-section a:hover { color: #c9a227; }
+
+        .drawer-bottom {
+            margin-top: auto;
+            padding: 16px 24px;
+            font-size: 11px;
+            color: #444;
+        }
+
+        /* ── DARK OVERLAY ── */
+        .drop-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 1400;
+        }
+        .drop-overlay.open { display: block; }
     </style>
 </head>
-
 <body>
 
+    <!-- HAMBURGER BUTTON -->
+    <button class="hamburger-btn" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </button>
+
+    <!-- DARK OVERLAY -->
+    <div class="drop-overlay" id="dropOverlay" onclick="toggleMenu()"></div>
+
+    <!-- LEFT SLIDE DRAWER -->
+    <div class="left-drawer" id="leftDrawer">
+        <div class="drawer-inner">
+
+            <button class="drawer-close" onclick="toggleMenu()">✕</button>
+
+            <div class="drawer-brand">
+                <div class="three-lines"><span></span><span></span><span></span></div>
+                <div class="brand-name">SVIT Canteen</div>
+                <div class="brand-tagline">"Fast. Fresh. At Your Fingertips."</div>
+                <p class="brand-since">Serving SVIT students with love since 2010.</p>
+            </div>
+
+            <div class="drawer-section">
+                <div class="drawer-section-title">Contact Us</div>
+                <div class="info-row">📍 <span>SVIT Campus, Vasad,<br>Gujarat – 388306</span></div>
+                <div class="info-row">🕐 <span>Mon–Sat | 8:00 AM – 6:00 PM</span></div>
+                <div class="info-row">📞 <span>+91 98765 43210</span></div>
+                <div class="info-row">✉️ <span>canteen@svit.ac.in</span></div>
+            </div>
+
+            <div class="drawer-section">
+                <div class="drawer-section-title">Follow Us</div>
+                <a href="#">📷 Instagram</a>
+                <a href="#">💼 LinkedIn</a>
+                <a href="#">🐙 GitHub</a>
+            </div>
+
+            <div class="drawer-section">
+                <div class="drawer-section-title">Feedback</div>
+                <a href="#">⭐ Rate Us</a>
+                <a href="#">💬 Suggestions</a>
+            </div>
+
+            <div class="drawer-bottom">© 2024 SVIT Canteen</div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
     <div class="header">
         <h1>SVIT CANTEEN</h1>
-        <h2>"Fast.Fresh.At your Fingertips."<h2>
+        <h2>"Fast.Fresh.At your Fingertips."</h2>
     </div>
 
     <div class="shop-grid">
-
-        <a href="chinese.html" class="shop-card">
-            <h3>🥢FEELING FAST FOOD </h3>
-            <p>Spicy manchurian, noodles, panipuri, and dahi chatako.</p>
-            <span class="btn" style="display:inline-block; margin-top:10px;">Open Menu</span>
-        </a>
-
-         <a href="MECHCAFE.html" class="shop-card">
-            <h3> MECH CAFE</h3>
+        <a href="MECHCAFE.html" class="shop-card">
+            <h3>MECH CAFE</h3>
             <p>Crispy puffs, cheesy garlic bread, pizzas, and drinks.</p>
             <span class="btn" style="display:inline-block; margin-top:10px;">Open Menu</span>
         </a>
-
         <a href="gujrati.html" class="shop-card">
             <h3>FIX THALI</h3>
-            <p> Ghar ka swad</p>
+            <p>Ghar ka swad</p>
             <span class="btn" style="display:inline-block; margin-top:10px;">Open Menu</span>
         </a>
-    
-
         <a href="SANDWICH.html" class="shop-card">
-            <h3> GAJANAND SANDWICH CENTER </h3>
+            <h3>GAJANAND SANDWICH CENTER</h3>
             <p>Crispy puffs, cheesy garlic bread, pizzas, and drinks.</p>
             <span class="btn" style="display:inline-block; margin-top:10px;">Open Menu</span>
         </a>
-
         <a href="NESCAFE.html" class="shop-card">
-            <h3>☕ NESCAFE </h3>
+            <h3>☕ NESCAFE</h3>
             <p>Enjoy hot brews, cold drinks, and spicy items.</p>
             <span class="btn" style="display:inline-block; margin-top:10px;">Open Menu</span>
         </a>
-
         <a href="burger.html" class="shop-card">
-            <h3>Burger corner </h3>
+            <h3>Burger corner</h3>
             <p>enjoy spicy delicious food</p>
             <span class="btn" style="display:inline-block; margin-top:10px;">Open Menu</span>
         </a>
-        
         <a href="sevusal.html" class="shop-card">
-            <h3> sev usal</h3>
-            <p> vadodars special</p>
+            <h3>sev usal</h3>
+            <p>vadodars special</p>
             <span class="btn" style="display:inline-block; margin-top:10px;">Open Menu</span>
         </a>
-        
-
-
+        <a href="chinese.html" class="shop-card">
+            <h3>🥢 FEELING FAST FOOD</h3>
+            <p>Spicy manchurian, noodles, panipuri, and dahi chatako.</p>
+            <span class="btn" style="display:inline-block; margin-top:10px;">Open Menu</span>
+        </a>
     </div>
 
-    <div class="shop-container"></div>
-
-    
-
-    </div>
+    <script>
+        function toggleMenu() {
+            document.getElementById('leftDrawer').classList.toggle('open');
+            document.getElementById('dropOverlay').classList.toggle('open');
+        }
+    </script>
 
 </body>
 </html>
